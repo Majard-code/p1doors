@@ -1,0 +1,45 @@
+.phone {
+  grid-area: phone;
+
+  font-size: 30px;
+  font-weight: 900; 
+
+  color: white;
+
+}
+.phoneDesktop {
+  margin-right: 5px;
+
+}
+.phoneMobile {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+
+  display:none;
+  width: 60px;
+  height: 60px;
+  background: url("phone.svg") center no-repeat;
+
+  transform: rotate(-90deg);
+}
+
+.phoneMobile a{
+  width: 60px;
+  height: 60px;
+}
+
+@media screen and (max-width: 1200px) {
+  .phoneDesktop{
+    text-align: end;
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .phoneDesktop {
+    display: none;
+  }
+  .phoneMobile {
+    display: block;
+  }
+}

@@ -1,0 +1,141 @@
+.intro {
+    grid-area: intro;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    grid-template-areas:
+    "introUp"
+    "introDiv"
+    "introDown";
+
+    align-items: center;
+    justify-items: center;
+    padding: 0px 20px;
+    min-height: 550px;
+    height: 100vh;
+    width: 100%;
+
+    color: white;
+    background: url(main.jpg) center no-repeat;
+    background-size: cover;
+
+}
+.intro__up {
+    display: block;
+    grid-area: introUp;
+}
+.intro__div {
+    grid-area: introDiv;
+
+}
+.intro__h1 {
+    opacity: 0;
+    
+    font-size: 63px;
+    
+    animation-delay: 1s;
+}
+.intro__p {
+    opacity: 0;
+
+    margin-top: 50px;
+
+    font-size: 25px;
+
+    animation-delay: 1200ms;
+}
+.intro__btn {
+    opacity: 0;
+    display: inline-block;
+    margin-top: 50px;
+    padding: 10px 20px;
+
+    font-size: 16px;
+
+    border: 1px solid white;
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    animation-delay: 1400ms;
+}
+.intro__down {
+    position: relative;
+    grid-area: introDown;
+    font-size: 20px;
+    color: white;
+    align-content: center;
+}
+.intro__down a {
+    position: absolute;
+    left: 50%;  
+    
+    display: block;
+    width: 40px;
+    height: 40px;
+  
+    margin-left: -20px;
+  
+    color: white;
+
+
+
+    animation: move 1s infinite;
+}
+.ina {
+    margin: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url("arrow.svg");
+}
+
+@keyframes move {
+    from {
+      top: -15px;
+      animation-timing-function: ease-in;
+    }
+    50% {
+      top: -5px;
+      animation-timing-function: ease-out;  
+    }
+    to {
+      top: -15px;
+      animation-timing-function: ease-in;  
+    }
+  
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .intro__h1{
+      font-size: 53px;
+    }
+    .intro__p{
+  
+      font-size: 23px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .intro__h1{
+      font-size: 43px;
+    }
+    .intro__p{
+  
+      font-size: 20px;
+    }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+    .intro__h1{
+      font-size: 33px;
+    }
+    .intro__p{
+  
+      font-size: 17px;
+    }
+}
+@media (max-width: 479px) {
+    .intro__h1{
+      font-size: 23px;
+    }
+    .intro__p{
+  
+      font-size: 17px;
+    }
+}

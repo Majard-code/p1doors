@@ -1,0 +1,5 @@
+.Foot {
+  grid-area: foot;
+  background-color: blueviolet;
+  height: 100px;
+}

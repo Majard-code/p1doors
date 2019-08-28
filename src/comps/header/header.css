@@ -1,0 +1,49 @@
+.header{
+  position: fixed;
+  z-index: 9999;
+
+  display: grid;
+  grid-template-areas: 
+  "logo menu111 phone";
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: min-content;
+
+  align-items: center;
+  
+  width: 100%;
+  padding: 10px;  
+  
+  background-color: rgba(25, 18, 13, 0.7);
+  transition: 500ms;
+}
+.header a {
+  color: white;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header{
+    grid-template-areas: 
+    "logo phone"
+    "logo menu111";
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: max-content max-content;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .header{
+    grid-template-areas: 
+    "logo phone menu111";
+    grid-template-columns: max-content 1fr max-content;
+    grid-template-rows: max-content;
+  }
+}
+@media (max-width: 767px) {
+  .header{
+    grid-template-areas: 
+    "logo . menu111";
+    grid-template-columns: max-content 1fr max-content;
+    grid-template-rows: max-content;
+  }
+}
+
+

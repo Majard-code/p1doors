@@ -1,0 +1,86 @@
+.door {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: max-content max-content auto max-content 30px; 
+    grid-template-areas:
+    "doorImg1 doorImg2"
+    "door__name door__name"
+    "doorInfo doorInfo"
+    "door__cost door__cost"
+    "doorBtn doorBtn";
+
+
+    width: 300px;
+
+    margin: 0px auto 20px auto;
+    padding: 8px;
+    border: 1px solid rgba(7, 5, 4, 0.3);
+}
+.door__img1{
+    grid-area: doorImg1;
+    justify-self: end;
+    max-width: 100%;
+    height: auto;
+}
+.door__img2{
+    grid-area: doorImg2;
+    max-width: 100%;
+    height: auto;
+}
+.door__name {
+    grid-area: door__name;
+    font-size: 22px;
+    font-weight: 900;
+}
+.door__info{
+    position: relative;
+    grid-area: doorInfo;
+    text-align: start;
+
+}
+.door__info_discount {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    font-weight: 900;
+    font-size: 45px;
+    color: rgba(255, 0, 0, 0.4);
+    transform: translate(-50%, -50%) rotateZ(-45deg);
+    z-index: -1;
+}
+.door__info_span_title{
+    font-size: 14px;
+    font-weight: 700;
+}
+.door__info_span_text{
+    font-size: 14px;
+}
+.door__info_span_cost{
+    font-size: 14px;
+    text-decoration: line-through;
+}
+.door__info_span_dcost{
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: 900;
+
+}
+.door__cost {
+    grid-area: door__cost;
+}
+.door__btn{
+    grid-area: doorBtn;
+    border: 1px solid rgba(7, 5, 4, 0.3);
+    border-radius: 7px;
+    line-height: 25px;
+}
+.door__btn:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .door {
+        width: 90%;
+    }
+}

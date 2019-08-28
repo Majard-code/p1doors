@@ -1,0 +1,175 @@
+input[type="radio"],[type="checkbox"] {
+    display: none;
+}
+.calc-select {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    max-width: 700px;
+    background-color: white;   
+    color: black; 
+    transition: 500ms;
+}
+.calc-select__h3 {
+    margin-bottom: 20px;
+}
+.calc-select__h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+}
+.hidden {
+    display: none;
+}
+.labels {
+    display: grid;
+    grid-template-columns: 1fr max-content min-content;
+    position: relative;
+    align-items: center;
+    min-height: 40px;
+    width: 100%;
+    border-bottom: 1px solid bisque;
+    transition: 500ms;
+}
+.labels:hover {
+    background-color: bisque;
+}
+.calc-select__name {
+    padding-left: 20px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 300;
+}
+.calc-select__name-checkbox {
+    padding-left: 20px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 300;
+}
+.calc-select__name::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    border: 2px solid rgb(7, 5, 4);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    left: 0px;
+    top: 50%;
+    margin-top: -7px;
+}
+.calc-select__name-checkbox::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    border: 2px solid rgb(7, 5, 4);
+    border-radius: 20%;
+    width: 10px;
+    height: 10px;
+    left: 0px;
+    top: 50%;
+    margin-top: -7px;
+}
+input[type="radio"]:checked + .calc-select__name::before {
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNDUuNzAxIDQ1LjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ1LjcwMSA0NS43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTIwLjY4NywzOC4zMzJjLTIuMDcyLDIuMDcyLTUuNDM0LDIuMDcyLTcuNTA1LDBMMS41NTQsMjYuNzA0Yy0yLjA3Mi0yLjA3MS0yLjA3Mi01LjQzMywwLTcuNTA0ICAgIGMyLjA3MS0yLjA3Miw1LjQzMy0yLjA3Miw3LjUwNSwwbDYuOTI4LDYuOTI3YzAuNTIzLDAuNTIyLDEuMzcyLDAuNTIyLDEuODk2LDBMMzYuNjQyLDcuMzY4YzIuMDcxLTIuMDcyLDUuNDMzLTIuMDcyLDcuNTA1LDAgICAgYzAuOTk1LDAuOTk1LDEuNTU0LDIuMzQ1LDEuNTU0LDMuNzUyYzAsMS40MDctMC41NTksMi43NTctMS41NTQsMy43NTJMMjAuNjg3LDM4LjMzMnoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
+    background-size: 100%;
+    border: none;
+    width: 14px;
+    height: 14px;
+    margin-top: -9px;
+}
+input[type="checkbox"]:checked + .calc-select__name-checkbox::before {
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNDUuNzAxIDQ1LjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ1LjcwMSA0NS43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTIwLjY4NywzOC4zMzJjLTIuMDcyLDIuMDcyLTUuNDM0LDIuMDcyLTcuNTA1LDBMMS41NTQsMjYuNzA0Yy0yLjA3Mi0yLjA3MS0yLjA3Mi01LjQzMywwLTcuNTA0ICAgIGMyLjA3MS0yLjA3Miw1LjQzMy0yLjA3Miw3LjUwNSwwbDYuOTI4LDYuOTI3YzAuNTIzLDAuNTIyLDEuMzcyLDAuNTIyLDEuODk2LDBMMzYuNjQyLDcuMzY4YzIuMDcxLTIuMDcyLDUuNDMzLTIuMDcyLDcuNTA1LDAgICAgYzAuOTk1LDAuOTk1LDEuNTU0LDIuMzQ1LDEuNTU0LDMuNzUyYzAsMS40MDctMC41NTksMi43NTctMS41NTQsMy43NTJMMjAuNjg3LDM4LjMzMnoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
+    background-size: 100%;
+    border: none;
+    width: 14px;
+    height: 14px;
+    margin-top: -9px;
+}
+.calc-select__price {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.calc-select__itogo{
+    text-align: left;
+    font-size: 16px;
+    font-weight: 300;
+}
+.calc-select__rub {
+    font-size: 16px;
+    font-weight: 300;
+}
+.calc_select__step-btns {
+    margin-top: 20px;
+}
+.calc-select__btn-left{
+    padding: 0px 10px;
+    border: 1px solid rgba(7, 5, 4, 0.3);
+    border-radius: 7px 0px 0px 7px;
+    line-height: 25px;
+    background: none;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    font-weight: 700;
+  
+}
+.calc-select__btn-right{
+    margin-left: 1px;
+    padding: 0px 10px;
+    border: 1px solid rgba(7, 5, 4, 0.3);
+    border-radius: 0px 7px 7px 0px;
+    line-height: 25px;
+    background: none;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    font-weight: 700;
+  
+}
+.calc-select__btn-alone{
+    padding: 0px 10px;
+    border: 1px solid rgba(7, 5, 4, 0.3);
+    border-radius: 7px;
+    line-height: 25px;
+    background: none;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    font-weight: 700;
+  
+}
+@media (max-width: 479px) {
+    .calc-select__btn-left{
+        font-size: 10px;
+    }
+    .calc-select__btn-right{
+        font-size: 10px;
+    }
+    .calc-select__btn-alone{
+        font-size: 10px;
+    }
+    .calc-select__name {
+        font-size: 14px;
+      }
+    .calc-select__name-checkbox {
+        font-size: 14px;
+    }
+    .calc-select__price {
+        margin-left: 10px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .calc-select__rub {
+        font-size: 14px;
+    }
+    .calc-select__itogo{
+        font-size: 14px;
+    }
+}

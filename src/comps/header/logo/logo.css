@@ -1,0 +1,30 @@
+.logo {   
+    display: grid;
+    grid-area: logo;
+    grid-template-areas: "logoPic logoName";
+    grid-template-columns: max-content max-content;
+    grid-template-rows: max-content;
+
+}
+.logoPic{
+    grid-area: logoPic;
+    align-self: center;
+
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+
+    background: url(logo.png) center no-repeat;
+    background-size: cover;
+  }
+.logoName{
+    grid-area: logoName;
+
+    font-size: 20pt;
+    font-weight: 900;
+}
+.logoText{
+    grid-area: logoText;
+    font-size: 10pt;
+}

@@ -1,0 +1,23 @@
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10001;
+
+  width: 100%;
+  height: 100vh;
+
+  background: #fff;
+}
+
+.preloaderImg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 128px;
+  height: 128px;
+  margin: -64px 0 0 -64px;
+
+  background: url('preloader.gif') no-repeat 50% 50%;
+}

@@ -1,0 +1,58 @@
+.four {
+    display: grid;
+    grid-template-areas:
+    "four__sert four__price"
+    "four__stock four__resist";
+    grid-gap: 20px;
+    margin: 50px;
+    max-width: 1200px;
+    justify-self: center;
+}
+.four__sec {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 1px 1px 5px 0px rgba(25, 18, 13, 0.3);
+}
+
+.four__p {
+    margin-top: 10px;
+    font-size: 15px;
+    text-align: left;
+}
+.four__sec__icon {
+    width: 64px;
+    height: 64px;
+}
+.four__sec__icon1 {
+    background: url("./svg/sert.svg") center no-repeat;
+    background-size: 100%;
+}
+.four__sec__icon2 {
+    background: url("./svg/money.svg") center no-repeat;
+    background-size: 100%;
+}
+.four__sec__icon3 {
+    background: url("./svg/doors.svg") center no-repeat;
+    background-size: 100%;
+}
+.four__sec__icon4 {
+    background: url("./svg/locker.svg") center no-repeat;
+    background-size: 100%;
+}
+.four__sec__text h5 {
+    color: rgb(25,18,13);
+}
+
+@media (max-width: 767px) {
+    .four {
+        grid-template-areas:
+        "four__sert"
+        "four__price"
+        "four__stock"
+        "four__resist";
+
+    }
+}

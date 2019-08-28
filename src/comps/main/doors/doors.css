@@ -1,0 +1,49 @@
+.doors {
+    display: grid;
+    grid-area: doors;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    max-width: 2030px;
+}
+.doors h2 {
+    margin-top: 50px;
+    font-size: 24px;
+    font-weight: 900;
+}
+.doors p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+@media (min-width: 1320px) and (max-width: 1979px) {
+    .doors {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        max-width: 1350px;
+    }
+}
+@media (min-width: 990px) and (max-width: 1319px) {
+    .doors {    
+        max-width: 1010px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 660px) and (max-width: 989px) {
+    .doors {
+        max-width: 670px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 659px) {
+    .doors {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 479px) {
+    .doors h2 {
+        font-size: 20px;
+    }
+    .doors p {
+        font-size: 10px;
+    }
+}

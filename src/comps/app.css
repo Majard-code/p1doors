@@ -1,0 +1,8 @@
+.app {
+  display: grid;
+  grid-template-areas:
+  "main"
+  "foot";
+  text-align: center;
+}
+
