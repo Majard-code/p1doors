@@ -1,6 +1,6 @@
 .serts {
     display: grid;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .serts__btns {
     display: grid;

@@ -16,7 +16,7 @@ export const addClass = (ele,cls) => {
   
 export const removeClass = (ele,cls) => {
     if (hasClass(ele,cls)) {
-      var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+      var reg = new RegExp('(\\s+|^)'+cls+'(\\s+|$)');
       ele.className=ele.className.replace(reg,' ');
     }
   }

@@ -22,8 +22,10 @@ export const wantSlide = (num, timeoutHandle) => {
 
 export const NEXT_CAROUSEL = 'NEXT_CAROUSEL';
 export const PREV_CAROUSEL = 'PREV_CAROUSEL';
-export const OPEN_CAROUSEL = 'OPEN_CAROUSEL';
-export const CLOSE_CAROUSEL = 'CLOSE_CAROUSEL';
+export const LOOK_CAROUSEL = 'LOOK_CAROUSEL';
+export const UNIT_PURGE = 'UNIT_PURGE';
+export const CHANGE_WIDTH = 'CHANGE_WIDTH';
+export const LOOK_PURGE = 'LOOK_PURGE';
 
 export const nextCarousel = () => {
     return { type: NEXT_CAROUSEL };
@@ -31,9 +33,15 @@ export const nextCarousel = () => {
 export const prevCarousel = () => {
     return { type: PREV_CAROUSEL };
 }
-export const openCarousel = (obj) => {
-    return { type: OPEN_CAROUSEL, obj: obj};
+export const lookCarousel = (obj) => {
+    return { type: LOOK_CAROUSEL, obj: obj};
 }
-export const closeCarousel = (obj) => {
-    return { type: CLOSE_CAROUSEL, obj: obj };
+export const unitPurge = () => {
+    return { type: UNIT_PURGE};
+}
+export const changeWidth = (newWidth) => {
+    return { type: CHANGE_WIDTH, newWidth: newWidth};
+}
+export const lookPurge = () => {
+    return { type: LOOK_PURGE};
 }

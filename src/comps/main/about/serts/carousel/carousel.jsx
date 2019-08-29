@@ -1,56 +1,16 @@
 import React from 'react';
 import './carousel.css';
-import { openCarousel } from '../../../../../libs/actions1';
+import CarouselUnit from './carousel-unit/carousel-unit';
 
 const Carousel = (props) => {
+  let tegCarouselUnit = [];
+  for (let i = 0; i < props.state.units; i++) {
+    tegCarouselUnit.push(<CarouselUnit key={i} id={`carousel-unit${i}`} dispatch={props.dispatch} state={props.state}/>)
+  }
   return (
     <section className="carousel__base">
       <div className="carousel">
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
-        <div className="carousel__unit carousel__unit__btn" onClick={e => { const myself = e.currentTarget; props.dispatch(openCarousel(myself)) }}>
-          <div className="carousel__unit__btn_look"></div>
-        </div>
+        {tegCarouselUnit}
       </div>
     </section>
   );

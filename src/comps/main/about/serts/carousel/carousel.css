@@ -2,6 +2,7 @@
     justify-self: center;
     position: relative;
     perspective: 1000px;
+    transition: 1s;
 }
 .carousel {
     position: absolute;
@@ -9,55 +10,4 @@
     height: 100%;
     transform-style: preserve-3d;
     transition: 1s ease;
-}
-.carousel__unit {
-    position: absolute;
-    left: 50%;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-.carousel__unit:nth-child(1) {background: url(./serts/sert0.jpg) center no-repeat; background-size: 100% 100%;  }
-.carousel__unit:nth-child(2) {background: url(./serts/sert1.jpg) center no-repeat; background-size: 100% 100%;  }
-.carousel__unit:nth-child(3) {background: url(./serts/sert2.jpg) center no-repeat; background-size: 100% 100%;  }
-.carousel__unit:nth-child(4) {background: url(./serts/sert3.jpg) center no-repeat; background-size: 100% 100%;  }
-.carousel__unit:nth-child(5) {background: url(./serts/sert4.jpg) center no-repeat; background-size: 100% 100%;  }
-.carousel__unit:nth-child(6) {background: url(./serts/sert5.jpg) center no-repeat; background-size: 100% 100%;  }
-.carousel__unit:nth-child(7) {background: url(./serts/sert6.jpg) center no-repeat; background-size: 100% 100%;  }
-.carousel__unit:nth-child(8) {background: url(./serts/sert7.jpg) center no-repeat; background-size: 100% 100%;  }
-.carousel__unit:nth-child(9) {background: url(./serts/sert8.jpg) center no-repeat; background-size: 100% 100%;  }
-.carousel__unit:nth-child(10) {background: url(./serts/sert9.jpg) center no-repeat; background-size: 100% 100%; }
-.carousel__unit:nth-child(11) {background: url(./serts/sert10.jpg) center no-repeat; background-size: 100% 100%;}
-.carousel__unit:nth-child(12) {background: url(./serts/sert11.jpg) center no-repeat; background-size: 100% 100%;}
-.carousel__unit:nth-child(13) {background: url(./serts/sert12.jpg) center no-repeat; background-size: 100% 100%;}
-.carousel__unit:nth-child(14) {background: url(./serts/sert13.jpg) center no-repeat; background-size: 100% 100%;}
-.carousel__unit:nth-child(15) {background: url(./serts/sert14.jpg) center no-repeat; background-size: 100% 100%;}
-
-.carousel__unit-look {
-    width: 1000px;
-}
-.carousel__unit__btn {
-    cursor: pointer;
-    border: none;
-    outline: none;
-
-    transition: 300ms;
-}
-.carousel__unit__btn_look {
-    width: 80px;
-    height: 80px;
-    background: url("./svg/zoomin.svg") center no-repeat;
-    background-color: rgba(25, 18, 13, 0.1);
-    background-size: 70% 70%;
-    border-radius: 50%;
-}
-.carousel__unit__btn_close {
-    width: 80px;
-    height: 80px;
-    background: url("./svg/zoomout.svg") center no-repeat;
-    background-color: rgba(25, 18, 13, 0.1);
-    background-size: 70% 70%;
-    border-radius: 50%;
 }

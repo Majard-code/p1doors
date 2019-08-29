@@ -1,0 +1,34 @@
+.carousel-unit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+.carousel-unit__btn {
+    cursor: pointer;
+}
+.carousel-unit__init-btn {
+    opacity: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(25, 18, 13, 0.1);
+    background-size: 70% 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1s;
+}
+.carousel-unit__round-btn {
+    opacity: 1;
+}
+.carousel-unit__btn_look {
+    background-image: url("./svg/zoomin.svg");
+}
+.carousel-unit__btn_close {
+    background-image: url("./svg/zoomout.svg");
+}
