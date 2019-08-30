@@ -1,10 +1,9 @@
 .carousel-unit {
     position: absolute;
-    left: 50%;
-    top: 50%;
     display: grid;
     justify-items: center;
     align-items: center;
+    transform-origin: center center;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transition: 1s;

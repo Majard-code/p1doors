@@ -1,6 +1,7 @@
 .carousel__base {
     justify-self: center;
     position: relative;
+    transform: scaleY(2);
     perspective: 1000px;
     transition: 1s;
 }

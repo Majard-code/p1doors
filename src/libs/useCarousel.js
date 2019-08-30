@@ -49,6 +49,7 @@ export const useCarousel = (units, unitWidth, unitsGap, carouselBaseClass, carou
         unitLook: 0,
         isLooking: false
     });
+    let angle = Math.round(state.selectUnit / state.units * -360);
     // ОТРИСОВКА
     useEffect(() => {
         document.querySelector(`.${carouselBaseClass}`).style.width = `${state.unitWidth + state.unitsGap}px`;
@@ -56,8 +57,6 @@ export const useCarousel = (units, unitWidth, unitsGap, carouselBaseClass, carou
         document.querySelectorAll(`.${carouselUnitClass}`).forEach((item, i) => {
             item.style.width = `${state.unitWidth}px`;
             item.style.height = `${Math.round(state.unitWidth / 9 * 12.8)}px`;
-            item.style.marginLeft = `-${state.unitWidth / 2}px`;
-            item.style.marginTop = `-${state.unitWidth / 9 * 12.8 / 2}px`;
             item.style.background = `url(${require('./serts/sert' + i + '.jpg')}) center center / 100% 100% no-repeat`;
             item.style.transform = `rotateY(${Math.round(i * 360 / state.units)}deg) translateZ(${state.radius}px)`;
         });
@@ -67,16 +66,13 @@ export const useCarousel = (units, unitWidth, unitsGap, carouselBaseClass, carou
         dispatch(lookPurge());
         document.querySelector(`.${carouselBaseClass}`).style.width = `${state.unitWidth + state.unitsGap}px`;
         document.querySelector(`.${carouselBaseClass}`).style.height = `${Math.round(state.unitWidth / 9 * 12.8)}px`;
-        let angle = Math.round(state.selectUnit / state.units * -360);
-        document.querySelector(`.${carouselClass}`).style.transform = `translateZ(-${state.radius}px) rotateY(${angle}deg)`;
+        document.querySelector(`.${carouselClass}`).style.transform = `translateZ(-${state.radius}px) rotateY(${Math.round(state.selectUnit / state.units * -360)}deg)`;
         document.querySelectorAll(`.${carouselUnitClass}`).forEach((item, i) => {
             i === state.unitLook ? item.classList.add('carousel-unit__btn') : item.classList.remove('carousel-unit__btn');
             i === state.unitLook ? item.firstChild.classList.add('carousel-unit__round-btn') : item.firstChild.classList.remove('carousel-unit__round-btn');
             if (i === state.unitLook - 1 || i === state.unitLook + 1 || i === 0 || i === state.units - 1){
                 item.style.width = `${state.unitWidth}px`;
                 item.style.height = `${Math.round(state.unitWidth / 9 * 12.8)}px`;
-                item.style.marginLeft = `-${state.unitWidth / 2}px`;
-                item.style.marginTop = `-${state.unitWidth / 9 * 12.8 / 2}px`;
                 item.firstChild.classList.remove('carousel-unit__btn_close');
                 item.firstChild.classList.add('carousel-unit__btn_look');
             }
@@ -89,19 +85,15 @@ export const useCarousel = (units, unitWidth, unitsGap, carouselBaseClass, carou
                 if (state.unit.firstChild.classList.contains('carousel-unit__btn_look')) {
                     state.unit.firstChild.classList.remove('carousel-unit__btn_look');
                     state.unit.firstChild.classList.add('carousel-unit__btn_close');
-                    document.querySelector(`.${carouselBaseClass}`).style.width = `${state.lookUnitWidth}px`;
-                    document.querySelector(`.${carouselBaseClass}`).style.height = `${Math.round(state.lookUnitWidth / 9 * 12.8)}px`;
-                    state.unit.style.width = `${state.lookUnitWidth}px`;
-                    state.unit.style.height = `${Math.round(state.lookUnitWidth / 9 * 12.8)}px`;
-                    state.unit.style.marginLeft = `-${state.lookUnitWidth / 2}px`;
-                    state.unit.style.marginTop = `-${state.lookUnitWidth / 9 * 12.8 / 2}px`;
+
+                    state.unit.style.transform = `rotateY(${Math.round(state.unitLook * 360 / state.units)}deg) translateZ(${state.radius}px) scale(2, 2)`;
+
+
                 } else {
                     document.querySelector(`.${carouselBaseClass}`).style.width = `${state.unitWidth + state.unitsGap}px`;
-                    document.querySelector(`.${carouselBaseClass}`).style.height = `${Math.round(state.unitWidth / 9 * 12.8)}px`;
-                    state.unit.style.width = `${state.unitWidth}px`;
-                    state.unit.style.height = `${Math.round(state.unitWidth / 9 * 12.8)}px`;
-                    state.unit.style.marginLeft = `-${state.unitWidth / 2}px`;
-                    state.unit.style.marginTop = `-${state.unitWidth / 9 * 12.8 / 2}px`;
+                    state.unit.style.transform = `rotateY(${Math.round(state.unitLook * 360 / state.units)}deg) translateZ(${state.radius}px)`;
+
+
                     state.unit.firstChild.classList.remove('carousel-unit__btn_close');
                     state.unit.firstChild.classList.add('carousel-unit__btn_look');
                 }
