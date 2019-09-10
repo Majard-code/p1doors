@@ -1,5 +1,5 @@
-.Foot {
+.foot {
   grid-area: foot;
-  background-color: blueviolet;
-  height: 100px;
+  background-color: rgb(25, 18, 13);
+  color: white;
 }

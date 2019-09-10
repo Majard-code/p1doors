@@ -40,10 +40,6 @@
     font-weight: 900;
   }
 
-  .loading {
-    font-size: 20px;
-    font-weight: 900;
-  }
   .all-columns {
     grid-column: 1 / -1;
   }

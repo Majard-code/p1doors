@@ -3,7 +3,6 @@ import './calc_select.css';
 import { thousands, lcFirst } from '../../../../../libs/lib1';
 
 const CalcSelect = (props) => {
-
   let tegCalcSelect = [];
   let calcSelectH3;
   let btnClass1 = [];
@@ -12,7 +11,7 @@ const CalcSelect = (props) => {
   switch (props.step) {
     case 1:
       calcSelectH3 = "ВЫБЕРИТЕ ВНЕШНЮЮ ОТДЕЛКУ ДВЕРИ."
-      tegCalcSelect = props.calc.data.map((outFace, i) => {
+      tegCalcSelect = props.calc.map((outFace, i) => {
         if (i >= 1 && i < 10) {
           return (
             <label key={outFace.id} className="labels">
@@ -35,7 +34,7 @@ const CalcSelect = (props) => {
       break;
     case 2:
       calcSelectH3 = "ВЫБЕРИТЕ ВНУТРЕННЮЮ ОТДЕЛКУ ДВЕРИ."
-      tegCalcSelect = props.calc.data.map((inFace, i) => {
+      tegCalcSelect = props.calc.map((inFace, i) => {
         if (i >= 10 && i < 19) {
           return (
             <label key={inFace.id} className="labels">
@@ -58,7 +57,7 @@ const CalcSelect = (props) => {
       break;
     case 3:
       calcSelectH3 = "ВЫБЕРИТЕ ЗАМКИ, ФУРНИТУРУ И ПРОЧИЕ КОМПЛЕКТУЮЩИЕ."
-      tegCalcSelect = props.calc.data.map((other, i) => {
+      tegCalcSelect = props.calc.map((other, i) => {
         if (i >= 19 && i < 54) {
           if (i === 19) {
             return (
@@ -294,58 +293,58 @@ const CalcSelect = (props) => {
       for (let k in props.state) {
         switch (k) {
           case 'outFace':
-            tegCalcSelect.push(<div key={props.calc.data[props.state[k]].id} className="calc-select__itogo">{`Внешняя отделка: ${lcFirst(props.calc.data[props.state[k]].name)}.`}</div>);
+            tegCalcSelect.push(<div key={props.calc[props.state[k]].id} className="calc-select__itogo">{`Внешняя отделка: ${lcFirst(props.calc[props.state[k]].name)}.`}</div>);
             break;
           case 'inFace':
-            tegCalcSelect.push(<div key={props.calc.data[props.state[k]].id} className="calc-select__itogo">{`Внутреняя отделка: ${lcFirst(props.calc.data[props.state[k]].name)}.`}</div>);
+            tegCalcSelect.push(<div key={props.calc[props.state[k]].id} className="calc-select__itogo">{`Внутреняя отделка: ${lcFirst(props.calc[props.state[k]].name)}.`}</div>);
             break;
           case 'sealing':
-            tegCalcSelect.push(<div key={props.calc.data[props.state[k]].id} className="calc-select__itogo">{`${props.calc.data[props.state[k]].name} уплотнения.`}</div>);
+            tegCalcSelect.push(<div key={props.calc[props.state[k]].id} className="calc-select__itogo">{`${props.calc[props.state[k]].name} уплотнения.`}</div>);
             break;
           case 'insulation':
-            tegCalcSelect.push(<div key={props.calc.data[props.state[k]].id} className="calc-select__itogo">{`${props.calc.data[props.state[k]].name}.`}</div>);
+            tegCalcSelect.push(<div key={props.calc[props.state[k]].id} className="calc-select__itogo">{`${props.calc[props.state[k]].name}.`}</div>);
             break;
           case 'insulation27':
-            if (props.state[k]) tegCalcSelect.push(<div key={props.calc.data[27].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc.data[27].name)}.`}</div>);
+            if (props.state[k]) tegCalcSelect.push(<div key={props.calc[27].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc[27].name)}.`}</div>);
             break;
           case 'insulation28':
-            if (props.state[k]) tegCalcSelect.push(<div key={props.calc.data[28].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc.data[28].name)}.`}</div>);
+            if (props.state[k]) tegCalcSelect.push(<div key={props.calc[28].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc[28].name)}.`}</div>);
             break;
           case 'depth':
-            tegCalcSelect.push(<div key={props.calc.data[props.state[k]].id} className="calc-select__itogo">{`Толщина металла двери - ${props.calc.data[props.state[k]].name}.`}</div>);
+            tegCalcSelect.push(<div key={props.calc[props.state[k]].id} className="calc-select__itogo">{`Толщина металла двери - ${props.calc[props.state[k]].name}.`}</div>);
             break;
           case 'locker':
-            tegCalcSelect.push(<div key={props.calc.data[props.state[k]].id} className="calc-select__itogo">{`Замок ${lcFirst(props.calc.data[props.state[k]].name)}.`}</div>);
+            tegCalcSelect.push(<div key={props.calc[props.state[k]].id} className="calc-select__itogo">{`Замок ${lcFirst(props.calc[props.state[k]].name)}.`}</div>);
             break;
           case 'furn41':
-            if (props.state[k]) tegCalcSelect.push(<div key={props.calc.data[41].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc.data[41].name)}.`}</div>);
+            if (props.state[k]) tegCalcSelect.push(<div key={props.calc[41].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc[41].name)}.`}</div>);
             break;
           case 'furn42':
-            if (props.state[k]) tegCalcSelect.push(<div key={props.calc.data[42].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc.data[42].name)}.`}</div>);
+            if (props.state[k]) tegCalcSelect.push(<div key={props.calc[42].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc[42].name)}.`}</div>);
             break;
           case 'furn43':
-            if (props.state[k]) tegCalcSelect.push(<div key={props.calc.data[43].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc.data[43].name)}.`}</div>);
+            if (props.state[k]) tegCalcSelect.push(<div key={props.calc[43].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc[43].name)}.`}</div>);
             break;
           case 'furn44':
-            if (props.state[k]) tegCalcSelect.push(<div key={props.calc.data[44].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc.data[44].name)}.`}</div>);
+            if (props.state[k]) tegCalcSelect.push(<div key={props.calc[44].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc[44].name)}.`}</div>);
             break;
           case 'furn45':
-            if (props.state[k]) tegCalcSelect.push(<div key={props.calc.data[45].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc.data[45].name)}.`}</div>);
+            if (props.state[k]) tegCalcSelect.push(<div key={props.calc[45].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc[45].name)}.`}</div>);
             break;
           case 'furn46':
-            if (props.state[k]) tegCalcSelect.push(<div key={props.calc.data[46].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc.data[46].name)}.`}</div>);
+            if (props.state[k]) tegCalcSelect.push(<div key={props.calc[46].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc[46].name)}.`}</div>);
             break;
           case 'furn47':
-            if (props.state[k]) tegCalcSelect.push(<div key={props.calc.data[47].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc.data[47].name)}.`}</div>);
+            if (props.state[k]) tegCalcSelect.push(<div key={props.calc[47].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc[47].name)}.`}</div>);
             break;
           case 'furn48':
-            if (props.state[k]) tegCalcSelect.push(<div key={props.calc.data[48].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc.data[48].name)}.`}</div>);
+            if (props.state[k]) tegCalcSelect.push(<div key={props.calc[48].id} className="calc-select__itogo">{`+ ${lcFirst(props.calc[48].name)}.`}</div>);
             break;
           case 'peephole':
             if (props.state.peephole === '50') {
-              tegCalcSelect.push(<div key={props.calc.data[props.state[k]].id} className="calc-select__itogo">{`${props.calc.data[props.state[k]].name}.`}</div>);
+              tegCalcSelect.push(<div key={props.calc[props.state[k]].id} className="calc-select__itogo">{`${props.calc[props.state[k]].name}.`}</div>);
             } else {
-              tegCalcSelect.push(<div key={props.calc.data[props.state[k]].id} className="calc-select__itogo">{`Глазок ${lcFirst(props.calc.data[props.state[k]].name)}.`}</div>);
+              tegCalcSelect.push(<div key={props.calc[props.state[k]].id} className="calc-select__itogo">{`Глазок ${lcFirst(props.calc[props.state[k]].name)}.`}</div>);
             }
             break;
           default:

@@ -5,8 +5,10 @@ import Doors from './doors/doors';
 import Calc from './calc/calc';
 import About from './about/about';
 import Comments from './comments/comments';
+import How from './how/how';
 
 const Main = () => {
+  console.log('перерисовка Main');
   return (
     <main className="main1">
       <article className="main">
@@ -15,6 +17,7 @@ const Main = () => {
         <Calc />
         <About />
         <Comments />
+        <How />
       </article>
     </main>
   );

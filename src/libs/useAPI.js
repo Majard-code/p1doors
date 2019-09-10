@@ -1,43 +1,61 @@
 import { useReducer, useEffect } from 'react';
 import * as axios from 'axios';
 
+const FETCH_START = 'FETCH_START';
 const FETCH_SUCCESS = 'FETCH_SUCCESS';
 const FETCH_FAILURE = 'FETCH_FAILURE';
 
+
 const reducer = (state, action) => {
     switch (action.type) {
+        case FETCH_START:
+            return {
+                ...state,
+                status: 'LOADING'
+            }
         case FETCH_SUCCESS:
             return {
-                isLoading: false,
-                isError: false,
-                error: null,
-                data: action.result
+                ...state,
+                data: action.payload,
+                status: 'SUCCESS'
             };
         case FETCH_FAILURE:
-            return { ...state, isLoading: false, isError: true, error: action.error };
+            return {
+                ...state,
+                error: action.payload,
+                status: 'FAILURE'
+            };
         default:
             return state;
     }
 }
-const initState = {
-    isLoading: true,
-    isError: false,
-    response: null,
-    error: null
-}
 
-export const useGet = myUrl => {
-    const [state, dispatch] = useReducer(reducer, initState);
-    const fetchData = myUrl => {
-        axios.get(myUrl).then(response => {
-            dispatch({ type: FETCH_SUCCESS, result: response.data });
-        }).catch(error => {
-            dispatch({ type: FETCH_FAILURE, error: error });
-        });
-    }
+export const useGet = (initUrl, initParams = {params: {}}) => {
+    const [state, dispatch] = useReducer(reducer, {
+        url: initUrl,
+        params: initParams,
+        data: null,
+        error: null,
+        status: 'INITIAL'
+    });
+
     useEffect(() => {
-        setTimeout(() => fetchData(myUrl), 1);
-    }, [myUrl]);
+        let didCancel = false;
+        const fetchData = async () => {
+            dispatch({ type: FETCH_START });
+            try {
+                const result = await axios.get(state.url, { params : state.params });
+                if (!didCancel) {
+                    dispatch({ type: FETCH_SUCCESS, payload: result.data });
+                }        
+            } catch (error) {
+                if (!didCancel) {
+                    dispatch({ type: FETCH_FAILURE, payload: error })
+                }        
+            }
+        };
+        fetchData();
+        return () => {didCancel = true};
+    }, [state.url, state.params]);
     return state;
 }
-

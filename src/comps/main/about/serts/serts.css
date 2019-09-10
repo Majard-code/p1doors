@@ -1,6 +1,5 @@
 .serts {
     display: grid;
-    overflow: hidden;
 }
 .serts__btns {
     display: grid;
@@ -18,6 +17,7 @@
     border-radius:  0 7px 7px 0;
     padding-top: 1px; 
     background: none;
+    z-index: 1;
 }
 .serts__prev-btn {
     transform: rotateZ(180deg);

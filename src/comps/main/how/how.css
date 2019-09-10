@@ -1,0 +1,30 @@
+.how {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: max-content 1fr;
+    margin-bottom: 50px;
+}
+.how__numbers {
+    padding-top: 5px;
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+    background-color: bisque;
+    border-radius: 50%;
+}
+.how__text {
+    text-align: left;
+}
+.how__text a {
+    color: black;
+    font-weight: 700;
+}
+.how__btns {
+    justify-self: center;
+}
+.how__btn {
+    width: 300px;
+    margin-top: 10px;
+}

@@ -15,7 +15,6 @@ const Serts = () => {
           <button className="serts__prev-btn serts__btn" onClick={() => dispatch(prevCarousel())}>&#10148;</button>
           <button className="serts__next-btn serts__btn" onClick={() => dispatch(nextCarousel())}>&#10148;</button>
         </div>
-        <div className="test-text"></div>
     </section>
   );
 }

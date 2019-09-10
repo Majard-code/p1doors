@@ -3,7 +3,7 @@ import './slider.css';
 import { useSlider } from '../../../../libs/useSlider';
 import { autoSlide, prevSlide, nextSlide, wantSlide } from '../../../../libs/actions1';
 
-const Slider = () => {
+const Slider = React.memo(() => {
   const dispatch = useSlider();
   let timeoutHandle = window.setTimeout(() => { dispatch(autoSlide()) }, 5000);
 
@@ -57,6 +57,6 @@ const Slider = () => {
       <button className="slider__btn slider__btn-next" onClick={() => dispatch(nextSlide(timeoutHandle))}>&#10095;</button>
     </section>
   );
-}
+});
 
 export default Slider;

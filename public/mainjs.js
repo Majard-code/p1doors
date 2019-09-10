@@ -3,7 +3,6 @@ let i = 0;
 
 $(document).ready(function () {
 
-    preLoader();
     
     window.addEventListener("scroll", trottleScroll, false);
 
@@ -24,6 +23,7 @@ $(document).ready(function () {
     });
 // ПЛАВНЫЙ ПЕРЕХОД ПО ЯКОРЯМ
     $('.anchor-a').on('click', function () {
+
         $("html, body").animate({
             scrollTop: $($(this).attr("href")).offset().top - 70 + "px"
         }, {
@@ -53,11 +53,3 @@ scrolling = (e) => {
         $('.header').css('background-color', 'rgba(25, 18, 13, 0.7)');
     }
 }
-
-preLoader = () => {
-    $('.preloader').find('preloaderImg').fadeOut().end().delay(400).fadeOut('slow');
-    $('.intro__h1').addClass('fadeInUp');
-    $('.intro__p').addClass('fadeInUp');
-    $('.intro__btn').addClass('fadeInUp');
-};
-

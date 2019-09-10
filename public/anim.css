@@ -53,6 +53,31 @@
     animation-name: fadeIn;
   }
 
+  @-webkit-keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+  }
+
   @-webkit-keyframes tada {
     from {
       -webkit-transform: scale3d(1, 1, 1);
@@ -160,6 +185,31 @@
     animation-name: fadeInLeft;
   }
 
+  @-webkit-keyframes rotateAnim {
+    from {
+      transform: rotateZ(0deg);
+    }
+  
+    to {
+      transform: rotateZ(359deg);
+    }
+  }  
+  @keyframes rotateAnim {
+    from {
+      transform: rotateZ(0deg);
+    }
+  
+    to {
+      transform: rotateZ(359deg);
+    }
+  }  
+  .rotateAnim {
+    -webkit-animation-name: rotateAnim;
+    animation-name: rotateAnim;
+  }
+
+/*******************************************************************************************************/
+
   .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -173,8 +223,18 @@
   }
   
   .animated.slow10 {
-    -webkit-animation-duration: 10s;
-    animation-duration: 10s;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+  }
+  
+  .animated.fast500 {
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+  }
+  
+  .animated.constancy {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;    
   }
 
   @media (print), (prefers-reduced-motion: reduce) {

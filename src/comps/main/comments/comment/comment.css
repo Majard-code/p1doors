@@ -1,0 +1,25 @@
+.comment {
+    display: grid;
+    grid-template-areas: 
+    "comment__img comment__h3"
+    "comment__img comment__socnet"
+    "comment__img comment__comment"
+    "comment__img .";
+    grid-template-rows: max-content max-content max-content 1fr;
+    text-align: start;
+    border: 1px solid black;
+}
+.comment__img {
+    grid-area: comment__img;
+    margin: 10px;
+}
+.comment__h3 {
+    grid-area: comment__h3;
+    margin-top: 10px;
+}
+.comment__socnet {
+    grid-area: comment__socnet;
+}
+.comment__comment {
+    grid-area: comment__comment;
+}

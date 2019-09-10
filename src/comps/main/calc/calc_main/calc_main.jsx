@@ -113,7 +113,7 @@ const CalcMain = (props) => {
     furn47: false,
     furn48: false,
     peephole: "50",
-    summ: props.calc.data[0].price
+    summ: props.calc[0].price
   });
   return (
     <div className="calc_main">
