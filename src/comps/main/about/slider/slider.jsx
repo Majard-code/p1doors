@@ -5,7 +5,7 @@ import { autoSlide, prevSlide, nextSlide, wantSlide } from '../../../../libs/act
 
 const Slider = React.memo(() => {
   const dispatch = useSlider();
-  let timeoutHandle = window.setTimeout(() => { dispatch(autoSlide()) }, 5000);
+  let timeoutHandle = window.setTimeout(() => { dispatch(autoSlide()) }, 10000);
 
   return (
     <section className="slider">
@@ -53,8 +53,8 @@ const Slider = React.memo(() => {
         <span className="slider__dot" onClick={() => dispatch(wantSlide(6, timeoutHandle))}></span>
         <span className="slider__dot" onClick={() => dispatch(wantSlide(7, timeoutHandle))}></span>
       </div>
-      <button className="slider__btn slider__btn-prev" onClick={() => dispatch(prevSlide(timeoutHandle))}>&#10094;</button>
-      <button className="slider__btn slider__btn-next" onClick={() => dispatch(nextSlide(timeoutHandle))}>&#10095;</button>
+      <div className="slider__btn slider__btn-prev" onClick={() => dispatch(prevSlide(timeoutHandle))}>&#10094;</div>
+      <div className="slider__btn slider__btn-next" onClick={() => dispatch(nextSlide(timeoutHandle))}>&#10095;</div>
     </section>
   );
 });

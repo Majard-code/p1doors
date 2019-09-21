@@ -1,13 +1,23 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunkMiddleware from 'redux-thunk';
+import app from './reducers/app';
+import popup from './reducers/popup';
+import mobmenu from './reducers/mobmenu';
 import phones from './reducers/phones';
+import doors from './reducers/doors';
+import calc from './reducers/calc';
+import comments from './reducers/comments';
 
-let reducers = combineReducers({
+const reducers = combineReducers({
+    app,
+    popup,
+    mobmenu,
     phones,
-    door,
+    doors,
     calc,
-    comments
+    comments,
 });
 
-const store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
 export default store;

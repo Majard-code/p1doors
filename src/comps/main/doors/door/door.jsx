@@ -24,7 +24,7 @@ const Door = (props) => {
         <span className="door__info_span_dcost">{props.door.dcost}</span>
         <span className="door__info_span_text"> руб.<br /></span>
       </div>
-      <span className="door__btn">Заказать</span>
+      <div className="door__btn app__button app__dark-button app__all-corner-round-button" onClick={props.openPopup}>ЗАКАЗАТЬ ДВЕРЬ</div>
 
     </section>
   );

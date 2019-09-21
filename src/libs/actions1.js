@@ -45,23 +45,3 @@ export const changeWidth = (newWidth) => {
 export const lookPurge = () => {
     return { type: LOOK_PURGE};
 };
-
-// ДЛЯ ОТЗЫВОВ
-
-export const SHOW_MORE_COMMENTS = 'SHOW_MORE_COMMENTS';
-
-export const showMoreComments = () => {
-    return { type: SHOW_MORE_COMMENTS };
-};
-
-// ДЛЯ ВСПЛЫВАЮЩЕГО ОКНА
-
-export const OPEN_CALL_MEASURER = 'OPEN_CALL_MEASURER';
-export const CLOSE_POPUP = 'CLOSE_POPUP';
-
-export const openCallMeasurer = () => {
-    return { type: OPEN_CALL_MEASURER };
-}
-export const closePopup = () => {
-    return { type: CLOSE_POPUP };
-}

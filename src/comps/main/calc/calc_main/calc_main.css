@@ -3,7 +3,14 @@
     grid-template-columns: 1fr 275px;
     grid-template-rows: 1fr;
     grid-gap: 1px;
+    width: 1200px;
     margin: 20px auto;
+}
+
+@media (max-width: 1199px) {
+    .calc_main {
+        width: 90%;
+    }
 }
 @media (max-width: 991px) {
     .calc_main {

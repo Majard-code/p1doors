@@ -8,8 +8,8 @@ const Serts = () => {
   const [state, dispatch] = useCarousel(14, 200, 20, 'carousel__base', 'carousel', 'carousel-unit');
   return (
     <section className="serts">
-        <h2>СЕРТИФИКАТЫ СООТВЕТСТВИЯ</h2>
-        <p>ТОЛЬКО КАЧЕСТВЕННЫЕ ЗАМКИ И ФУРНИТУРА ОТ ВЕДУЩИХ ПРОИЗВОДИТЕЛЕЙ</p>
+        <h2 className="app__h2">СЕРТИФИКАТЫ СООТВЕТСТВИЯ</h2>
+        <p className="app__sub-h2">ТОЛЬКО КАЧЕСТВЕННЫЕ ЗАМКИ И ФУРНИТУРА ОТ ВЕДУЩИХ ПРОИЗВОДИТЕЛЕЙ</p>
         <Carousel dispatch={dispatch} state={state} />
         <div className="serts__btns">
           <button className="serts__prev-btn serts__btn" onClick={() => dispatch(prevCarousel())}>&#10148;</button>

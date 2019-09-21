@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import $ from 'jquery';
 import './app.css';
 
 import Header from './header/header';
@@ -7,32 +9,70 @@ import Popup from './popup/popup';
 import Foot from './foot/foot';
 import Main from './main/main';
 import Mobmenu from './mobmenu/mobmenu';
-import useGlobal from '../store';
 
-const App = () => {
-  console.log('перерисовка App');
-  const [gState, gActions] = useGlobal();
-  console.log(gState);
-  setTimeout(() => gActions.initial.getAll(), 300);
-  if (gState.phones.status === 'SUCCESS' && gState.doors.status === 'SUCCESS' && gState.calc.status === 'SUCCESS' && gState.comments.status === 'SUCCESS') {
-    setTimeout(() => document.querySelector('.app__veil').style.display = 'none', 1000);
+import store from '../redux/store';
+import { fetchAll } from '../redux/reducers/app';
+import { mobmenuClose } from '../redux/reducers/mobmenu';
+import { trottleScroll } from '../libs/lib1';
+
+const App = (props) => {
+debugger;
+  useEffect(() => {
+    let didCancel = false;
+    if (!props.isReady) {
+      setTimeout(() => props.fetchAll(didCancel), 500);
+    } else {
+      document.querySelector('.preloader').classList.add('fadeOut');
+      setTimeout(() => document.querySelector('.preloader').classList.add('preloader__off'), 1000);
+
+      $('.anchor-a').on('click', function () {
+        props.mobmenuClose();
+
+        $("html, body").animate({
+            scrollTop: $($(this).attr("href")).offset().top - 70 + "px"
+        }, {
+            duration: 300,
+            easing: "swing"
+        });
+        return false;
+    });
+    window.addEventListener("scroll", trottleScroll, false);
+
+    window.addEventListener('resize', () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+
+
+
+    }
+    return () => { didCancel = true; };
+  }, [props]);
+
+  if (!props.isReady) {
     return (
-        <div className="app">
-          <div className="app__veil animated fast500 fadeOut"></div>
-          <Popup />
-          <Mobmenu />
-          <Header />
-          <Main />
-          <Foot />
-        </div>
-    );
+      <div className="app">
+        <Preloader />
+      </div>
+    )
   } else {
     return (
       <div className="app">
-      <Preloader />
+        <Preloader />
+        <Popup />
+        <Mobmenu />
+        <Header />
+        <Main />
+        <Foot />
       </div>
     );
-  }
+  };
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isReady: state.app.isReady,
+  };
+};
+
+export default connect(mapStateToProps, { fetchAll, mobmenuClose })(App);

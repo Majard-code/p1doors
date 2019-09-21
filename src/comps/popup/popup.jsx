@@ -1,20 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import './popup.css';
-import { usePopup } from '../../libs/usePopup';
-import { closePopup } from '../../libs/actions1';
+import { closePopup } from '../../redux/reducers/popup';
 
-const Popup = () => {
-  const dispatch = usePopup()[1];
+const Popup = (props) => {
+  useEffect(() => {
+    if (props.isOpen) {
+      if (!document.querySelector('.popup').classList.contains('popup__visible')) {
+        document.querySelector('.popup').classList.add('popup__visible');
+      }
+    } else {
+      if (document.querySelector('.popup').classList.contains('popup__visible')) {
+        document.querySelector('.popup').classList.remove('popup__visible');
+      }
+    }
+  }, [props.isOpen]);
   return (
     <div className="popup popup-overlay">
-      <form className="form-popup ">
-        <input type="text" name="name" placeholder="Имя" id="form-popup_name" className="InputText" /><br />
-        <input type="text" name="phone" placeholder="Телефон" id="form-popup_phone" className="InputText" /><br />
-        <button id="form-popup_btn">Отправить</button>
-        <div className="close-popup" onClick={() => dispatch(closePopup())}></div>
-      </form>
+      <div className="form-popup ">
+        <p>В связи с проведением профилактических работ, некоторые формы обратной связи на сайте могут быть недоступны. Cвяжитесь с нами по телефону:</p>
+        <a target="_blank" rel="noopener noreferrer" href={`tel:${props.callPhone}`}>{props.seePhone}</a>
+        <p>и мы с удовольствием проконсультируем Вас по всем, интересующим Вас вопросам, касательно дверей Армада, их доставки и установки.</p>
+        <div className="close-popup" onClick={() => props.closePopup()}></div>
+      </div>
     </div>
   );
 }
-
-export default Popup;
+const mapStateToProps = (state) => {
+  return {
+    isOpen: state.popup.isOpen,
+    callPhone: state.phones.data.callPhone,
+    seePhone: state.phones.data.seePhone
+  };
+};
+export default connect(mapStateToProps, { closePopup })(Popup);

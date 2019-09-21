@@ -35,8 +35,8 @@ const CalcTotal = (props) => {
       <div className="calc-total__summ">
         {`~ ${thousands(realSumm)} руб.`}
       </div>
-      <button className="calc-total__btn calc-total__btn-buy">Заказать дверь</button>
-      <button className="calc-total__btn calc-total__btn-adj">Вызвать замерщика</button>
+      <div className="app__button app__dark-button app__all-corner-round-button calc-total__btn-buy" onClick={props.openPopup}>ЗАКАЗАТЬ ДВЕРЬ</div>
+      <div className="app__button app__dark-button app__all-corner-round-button calc-total__btn-adj" onClick={props.openPopup}>ВЫЗВАТЬ ЗАМЕРЩИКА</div>
     </div>
   );
 }

@@ -1,11 +1,5 @@
 .preloader {
-  display: grid;
-  grid-template-columns: 1fr max-content 1fr;
-  grid-template-rows: 1fr max-content 1fr;
-  grid-template-areas: 
-  ". . ."
-  ". preloader__center ."
-  ". . .";
+  display: block;
   position: fixed;
   left: 0;
   top: 0;
@@ -17,17 +11,15 @@
   font-weight: 700;
   color: black;
 }
-.preloader__center {
-  grid-area: preloader__center;
+.preloader__off {
+  display: none;
 }
 .preloader__center div {
   margin-top: 10px;
 }
-.preloader__center1 {
+.preloader__center {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 128px;
-  height: 128px;
-  margin: -64px 0 0 -64px;
+  transform: translate(-50%, -50%);
 }

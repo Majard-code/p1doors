@@ -118,7 +118,7 @@ const CalcMain = (props) => {
   return (
     <div className="calc_main">
       <CalcSelect state={state} dispatch={dispatch} step={props.step} setStep={props.setStep} calc={props.calc} />
-      <CalcTotal state={state} dispatch={dispatch} step={props.step} setStep={props.setStep} calc={props.calc} />
+      <CalcTotal state={state} dispatch={dispatch} step={props.step} setStep={props.setStep} calc={props.calc} openPopup={props.openPopup} />
     </div>
   );
 }

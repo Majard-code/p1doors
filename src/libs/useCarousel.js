@@ -88,8 +88,6 @@ export const useCarousel = (units, unitWidth, unitsGap, carouselBaseClass, carou
                     state.unit.firstChild.classList.remove('carousel-unit__btn_look');
                     state.unit.firstChild.classList.add('carousel-unit__btn_close');
                     state.unit.style.transform = `rotateY(${Math.round(state.unitLook * 360 / state.units)}deg) translateZ(${state.radius}px) scale(${state.lookUnitWidth / state.unitWidth}, ${state.lookUnitWidth / state.unitWidth})`;
-
-
                 } else {
                     document.querySelector(`.${carouselBaseClass}`).style.width = `${state.unitWidth + state.unitsGap}px`;
                     document.querySelector(`.${carouselBaseClass}`).style.height = `${Math.round(state.unitWidth / 9 * 12.8)}px`;

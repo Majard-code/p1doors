@@ -1,4 +1,5 @@
 .mobMenu {
+  display: block;
   position: fixed;
   top: -330px;
   z-index: 9899;
@@ -6,7 +7,7 @@
   height: 310px;
   color: white;
   background-color: rgba(7, 5, 4, 0.9);
-  transition: 300ms;
+  transition: 1000ms;
 
 }
 .mobMenu ul {
@@ -20,7 +21,6 @@
 .mobMenu_active {
   top: 0px;
 }
-
 .mobMenu a {
   position: relative;
   color: white;

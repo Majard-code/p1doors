@@ -185,6 +185,68 @@
     animation-name: fadeInLeft;
   }
 
+  @-webkit-keyframes fadeInDown {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+  }
+
+  @-webkit-keyframes fadeOutUp {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  
+  @keyframes fadeOutUp {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  
+  .fadeOutUp {
+    -webkit-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+  }
+
   @-webkit-keyframes rotateAnim {
     from {
       transform: rotateZ(0deg);
@@ -235,6 +297,56 @@
   .animated.constancy {
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;    
+  }
+
+  .animated.delay100ms {
+    -webkit-animation-delay: 100ms;
+    animation-delay: 100ms;
+  }
+
+  .animated.delay200ms {
+    -webkit-animation-delay: 200ms;
+    animation-delay: 200ms;
+  }
+
+  .animated.delay300ms {
+    -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
+  }
+
+  .animated.delay400ms {
+    -webkit-animation-delay: 400ms;
+    animation-delay: 400ms;
+  }
+
+  .animated.delay500ms {
+    -webkit-animation-delay: 500ms;
+    animation-delay: 500ms;
+  }
+
+  .animated.delay600ms {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+  }
+
+  .animated.delay700ms {
+    -webkit-animation-delay: 700ms;
+    animation-delay: 700ms;
+  }
+
+  .animated.delay800ms {
+    -webkit-animation-delay: 800ms;
+    animation-delay: 800ms;
+  }
+
+  .animated.delay900ms {
+    -webkit-animation-delay: 900ms;
+    animation-delay: 900ms;
+  }
+
+  .animated.delay1000ms {
+    -webkit-animation-delay: 1000ms;
+    animation-delay: 1000ms;
   }
 
   @media (print), (prefers-reduced-motion: reduce) {

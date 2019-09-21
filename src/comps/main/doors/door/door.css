@@ -71,9 +71,7 @@
 }
 .door__btn{
     grid-area: doorBtn;
-    border: 1px solid rgba(7, 5, 4, 0.3);
-    border-radius: 7px;
-    line-height: 25px;
+    padding-top: 2px;
 }
 .door__btn:hover{
     cursor: pointer;

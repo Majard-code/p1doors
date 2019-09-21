@@ -1,25 +1,49 @@
 .app {
   text-align: center; 
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.app__veil {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background-color: white;
-  z-index: 10000;
-  animation-delay: 200ms;
-}
-.button {
+.app__button {
   cursor: pointer;
   line-height: 25px;
   font-size: 14px;
   font-weight: 700;
+  background: none;
 }
-
-.dark-button {
+.app__dark-button {
   border: 1px solid rgb(25, 18, 13);
   color: rgb(25, 18, 13);
 }
-.all-corner-round-button {
+.app__white-button {
+  border: 1px solid white;
+  color: white;
+}
+.app__all-corner-round-button {
   border-radius: 6px;
+}
+.app__h2 {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: 900;
+}
+.app__sub-h2 {
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.app__dark-text {
+  color: rgb(25, 18, 13);
+}
+.app__white-text {
+  color: white;
+}
+
+@media (max-width: 479px) {
+  .app__h2 {
+      font-size: 20px;
+  }
+  .app__sub-h2 {
+      font-size: 12px;
+  }
 }

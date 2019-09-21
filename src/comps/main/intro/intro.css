@@ -12,6 +12,7 @@
     padding: 0px 20px;
     min-height: 550px;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
 
     color: white;

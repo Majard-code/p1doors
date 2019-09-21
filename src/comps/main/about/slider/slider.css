@@ -56,10 +56,11 @@
 }
 .slider__text {
     width: 70%;
-    max-width: 1200px;
+    
+    width: 1200px;
     padding: 20px;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 20px;
     background: rgba(255,255,255, 0.5);
 }
 .slider__btn {
@@ -69,7 +70,8 @@
     margin-top: -15px;
     width: 30px;
     height: 30px;
-    padding-bottom: 1px;
+    line-height: 32px;
+
     background: none;
     border: 1px solid bisque;
     border-radius: 50%;
@@ -85,4 +87,11 @@
     right: 0px;
     padding-left: 2px;
     margin-right: 10px; 
+}
+
+@media (max-width: 1300px) {
+    .slider__text {
+        width: 90%;
+        font-size: 16px;
+    }
 }

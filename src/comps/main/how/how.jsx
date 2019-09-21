@@ -1,17 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './how.css';
-import useGlobal from '../../../store';
+import { openPopup } from '../../../redux/reducers/popup';
 
-
-const How = () => {
+const How = (props) => {
   console.log('перерисовка How');
-  const phones = useGlobal()[0].phones.data;
   return (
     <section className="how">
-      <h2 className="all-columns">ЗАКАЗАТЬ У НАС ДВЕРЬ ОЧЕНЬ ПРОСТО</h2>
+      <h2 className="app__h2 all-columns">ЗАКАЗАТЬ У НАС ДВЕРЬ ОЧЕНЬ ПРОСТО</h2>
       <div className="how__numbers">1</div>
       <div className="how__text">
-      Свяжитесь с нами удобным способом: по телефону <a target="_blank" rel="noopener noreferrer" href={`tel:${phones.callPhone}`}>{phones.seePhone}</a> или заполнив любую из форм на сайте. Мы перезвоним Вам в течение часа.
+      Свяжитесь с нами удобным способом: по телефону <a target="_blank" rel="noopener noreferrer" href={`tel:${props.callPhone}`}>{props.seePhone}</a> или заполнив любую из форм на сайте. Мы перезвоним Вам в течение часа.
       </div>
       <div className="how__numbers">2</div>
       <div className="how__text">
@@ -26,11 +25,18 @@ const How = () => {
       Если Вы заказали дверь со склада, то мы установим ее на следующий день или в любое другое удобное время. Срок изготовления и установки дверей на заказ - от 7 рабочих дней. Доставка по Москве +10 км за МКАД 1500 руб. Стоимость стандартного монтажа 2000 руб (установка в готовый проем + расходные материалы).
       </div>
       <div className="how__btns all-columns">
-      <div className="how__btn button dark-button all-corner-round-button">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</div>
-      <div className="how__btn button dark-button all-corner-round-button">ВЫЗВАТЬ ЗАМЕРЩИКА</div>
+      <div className="how__btn app__button app__dark-button app__all-corner-round-button" onClick={props.openPopup}>ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</div>
+      <div className="how__btn app__button app__dark-button app__all-corner-round-button" onClick={props.openPopup}>ВЫЗВАТЬ ЗАМЕРЩИКА</div>
       </div>
     </section>
   );
 }
 
-export default How;
+const mapStateToProps = (state) => {
+  return {
+    callPhone: state.phones.data.callPhone,
+    seePhone: state.phones.data.seePhone
+  }
+}
+
+export default connect(mapStateToProps, { openPopup })(How);

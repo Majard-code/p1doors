@@ -2,7 +2,8 @@
     display: grid;
     grid-gap: 30px;
     grid-template-columns: max-content 1fr;
-    margin-bottom: 50px;
+    width: 1200px;
+    
 }
 .how__numbers {
     padding-top: 5px;
@@ -25,6 +26,21 @@
     justify-self: center;
 }
 .how__btn {
-    width: 300px;
+    width: 280px;
     margin-top: 10px;
+}
+
+@media (max-width: 1300px) {
+    .how {
+        width: 90%;
+    }
+}
+@media (max-width: 479px) {
+    .how {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .how__text {
+        text-align: center;
+    }
 }
